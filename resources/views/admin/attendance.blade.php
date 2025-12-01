@@ -21,7 +21,7 @@
     @include('admin.sidebar')
 
     <div class="main-content">
-        <h2 class="mb-4">Attendance</h2>
+        <h2 class="py-4">Attendance</h2>
          
         <!-- Success Message -->
         @if(session('success'))
@@ -68,7 +68,7 @@
                         <option value="Absent">Absent</option>
                         <option value="Leave">Leave</option>
                         <option value="Late">Late</option>
-                    </select>
+                 </select>
                 </div>
                 <div class="col-md-1 d-grid">
                     <button type="submit" class="btn btn-primary">Add</button>

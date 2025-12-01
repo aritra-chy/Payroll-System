@@ -10,6 +10,7 @@ use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\BonusDeductionController;
 use App\Http\Controllers\EmployeePayslipController;
+use App\Http\Controllers\Admin\JobController;
 
 
 Route::get('/', function () {
@@ -62,11 +63,12 @@ Route::prefix('admin')->group(function () {
     Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
     Route::get('/employee_list', [EmployeeController::class, 'employeeList'])->name('admin.employee_list');
 
-    // Attendance
+    //Attendance
     Route::prefix('attendance')->group(function () {
         Route::get('/', [AttendenceController::class, 'index'])->name('attendance.index');
         Route::post('/store', [AttendenceController::class, 'store'])->name('attendance.store');
     });
+    
 
     // Leave Requests
     Route::get('/leave-requests', [LeaveRequestController::class, 'adminIndex'])->name('admin.leave_requests');
@@ -103,3 +105,10 @@ Route::prefix('admin')->group(function () {
 
 });
 
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/job/create', [JobController::class, 'create'])->name('admin.job.create');
+    Route::post('/job/store', [JobController::class, 'store'])->name('admin.job.store');
+    Route::get('/job', [JobController::class, 'index'])->name('admin.job.index');
+});
