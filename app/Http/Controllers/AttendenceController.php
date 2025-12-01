@@ -8,11 +8,12 @@ use App\Models\Employee;
 
 class AttendenceController extends Controller
 {
-    // Show attendance page and list all records
     public function index()
     {
         $attendances = Attendence::with('employee')->orderBy('date', 'desc')->get();
         $employees = Employee::all(); // for the form
+        $attendances = Attendence::with('employee',)->paginate(10);
+        
         // dd($employees);
         return view('admin.attendance', compact('attendances', 'employees'));
     }

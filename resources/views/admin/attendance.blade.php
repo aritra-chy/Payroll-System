@@ -71,14 +71,14 @@
                     </select>
                 </div>
                 <div class="col-md-1 d-grid">
-                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </div>
             </div>
         </form>
 
         <!-- Attendance Table -->
         <table class="table table-bordered table-striped mt-3">
-            <thead class="table-dark">
+            <thead class="table-white">
                 <tr>
                     <th>#</th>
                     <th>Employee</th>
@@ -108,6 +108,11 @@
             </tbody>
         </table>
     </div>
+    <!-- Pagination Links -->
+    <div class="d-flex justify-content-center mt-4">
+        {{ $attendances->links('pagination::bootstrap-5') }}
+    </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
