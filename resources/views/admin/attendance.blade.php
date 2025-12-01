@@ -68,7 +68,7 @@
                         <option value="Absent">Absent</option>
                         <option value="Leave">Leave</option>
                         <option value="Late">Late</option>
-                    </select>
+                 </select>
                 </div>
                 <div class="col-md-1 d-grid">
                     <button type="submit" class="btn btn-primary">Add</button>
